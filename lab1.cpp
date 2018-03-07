@@ -3,7 +3,7 @@
 #include <string>
 #include <cmath>
 #include <fstream>
-//deklaracja uøycia przestrzeni nazw std
+//deklaracja u≈ºycia przestrzeni nazw std
 using namespace std;
 class Wykladnicza {
 public:
@@ -21,13 +21,13 @@ public:
 					 cout << " Podstawa:" << podstawa << endl;
 					 cout << " Wykladnik:" << wykladnik << endl << endl; */
 	};
-	//metoda klasy Wykladnicza opisana wewnπtrz klasy
+	//metoda klasy Wykladnicza opisana wewn≈°trz klasy
 	double scal()
 	{
 		return pow(podstawa, wykladnik);
 	};
-	//przeciπøenie operatora * dla liczb "wyk≥adniczych"
-	//bÍdπce metodπ klasy Wykladnicza
+	//przeci≈°≈ºenie operatora * dla liczb "wyk≈Çadniczych"
+	//bƒôd≈°ce metod≈° klasy Wykladnicza
 	/*Wykladnicza operator * (Wykladnicza x) {
 		if (podstawa == x.podstawa)
 			return Wykladnicza(podstawa, wykladnik + x.wykladnik);
@@ -37,8 +37,8 @@ public:
 			return Wykladnicza(scal()*x.scal(), 1);
 		}
 	};*/
-	//przeciπøenie operatora / dla liczb "wyk≥adniczych"
-	//bÍdπce metodπ klasy Wykladnicza
+	//przeci≈°≈ºenie operatora / dla liczb "wyk≈Çadniczych"
+	//bƒôd≈°ce metod≈° klasy Wykladnicza
 	Wykladnicza operator / (Wykladnicza x) {
 		if (podstawa == x.podstawa)
 			return Wykladnicza(podstawa, wykladnik - x.wykladnik);
@@ -48,7 +48,7 @@ public:
 			return Wykladnicza(scal() / x.scal(), 1);
 		}
 	};
-	//metoda klasy Wykladnicza odwracajπca podstawe i wykladnik
+	//metoda klasy Wykladnicza odwracaj≈°ca podstawe i wykladnik
 	void odwroc(void)
 	{
 		double temp = podstawa;
@@ -68,8 +68,8 @@ public:
 		}
 	}
 };
-//przeciπøenie operatora wypisywania dla liczb "wyk≥adniczych"
-//bÍdπce funkcjπ
+//przeci≈°≈ºenie operatora wypisywania dla liczb "wyk≈Çadniczych"
+//bƒôd≈°ce funkcj≈°
 ostream& operator << (ostream& out, Wykladnicza &liczba) {
 	if (liczba.wykladnik == 0) {
 		if (liczba.podstawa != 0) out << 1 << " ";
