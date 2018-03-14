@@ -59,7 +59,9 @@ ostream& operator << (ostream& out, Student & s) {
 	out << "Semestr: " << s.getSemestr() << endl;
 	out << "Numer indeksu: " << s.getNumerIndeksu() << endl;
 	return out;
-}class GeniuszMatematyczny {
+}
+
+class GeniuszMatematyczny {
 protected:
 	int iq = 0;
 	int liczbaWygranychOlimpiad = 0;
@@ -91,13 +93,61 @@ public:
 			gm.wynikMaturalnyZMatematyki << "%" << endl;
 		return out;
 	}
-};class PrzyjacielZwierzat {protected:	bool maPsaLubKota;	int liczbaZnanychGatunkow;	double wydatkiNaPokarm;public:	bool isMaPsaLubKota() {		return maPsaLubKota;	}	void setMaPsaLubKota(bool maPsaLubKota) {		this->maPsaLubKota = maPsaLubKota;	}	int getLiczbaZnanychGatunkow() {		return liczbaZnanychGatunkow;	}	void setLiczbaZnanychGatunkow(int liczbaZnanychGatunkow) {		this->liczbaZnanychGatunkow = liczbaZnanychGatunkow;	}	double getWydatkiNaPokarm() {		return wydatkiNaPokarm;	}	void setWydatkiNaPokarm(double wydatkiNaPokarm) {		this->wydatkiNaPokarm = wydatkiNaPokarm;	}	friend ostream& operator << (ostream& out, PrzyjacielZwierzat &pz){
+};
+
+class PrzyjacielZwierzat {
+protected:
+	bool maPsaLubKota;
+	int liczbaZnanychGatunkow;
+	double wydatkiNaPokarm;
+public:
+	bool isMaPsaLubKota() {
+		return maPsaLubKota;
+	}
+	void setMaPsaLubKota(bool maPsaLubKota) {
+		this->maPsaLubKota = maPsaLubKota;
+	}
+	int getLiczbaZnanychGatunkow() {
+		return liczbaZnanychGatunkow;
+	}
+	void setLiczbaZnanychGatunkow(int liczbaZnanychGatunkow) {
+		this->liczbaZnanychGatunkow = liczbaZnanychGatunkow;
+	}
+	double getWydatkiNaPokarm() {
+		return wydatkiNaPokarm;
+	}
+	void setWydatkiNaPokarm(double wydatkiNaPokarm) {
+		this->wydatkiNaPokarm = wydatkiNaPokarm;
+	}
+	friend ostream& operator << (ostream& out, PrzyjacielZwierzat &pz){
 		if (pz.maPsaLubKota) out << "Ma kotka albo pieska :)" << endl;
 		else out << "Nie ma ani kotka ani pieska :(" << endl;
 		out << "Liczba znanych gatunkow: " << pz.liczbaZnanychGatunkow << endl;
 		out << "Wydatki na pokarm: " << pz.wydatkiNaPokarm << endl;
 		return out;
-	}};class StudentBiologii : public Student, public PrzyjacielZwierzat {public:	StudentBiologii(string imie, string nazwisko, int semestr, string numerIndeksu, bool maPsaLubKota, int liczbaZnanychGatunkow, double wydatkiNaPokarm) :		Student(imie, nazwisko, semestr, numerIndeksu) {		this->maPsaLubKota = maPsaLubKota;		this->liczbaZnanychGatunkow = liczbaZnanychGatunkow;		this->wydatkiNaPokarm = wydatkiNaPokarm;		idKlasy = 3;	}	friend ostream& operator << (ostream& out, StudentBiologii & s) {		Student a = s;		PrzyjacielZwierzat pz = s;		out << a;		out << s;		return out;	}};class StudentInformatyki : public Student, public GeniuszMatematyczny {
+	}
+};
+
+class StudentBiologii : public Student, public PrzyjacielZwierzat {
+public:
+	StudentBiologii(string imie, string nazwisko, int semestr, string numerIndeksu, bool maPsaLubKota, int liczbaZnanychGatunkow, double wydatkiNaPokarm) :
+		Student(imie, nazwisko, semestr, numerIndeksu) {
+		this->maPsaLubKota = maPsaLubKota;
+		this->liczbaZnanychGatunkow = liczbaZnanychGatunkow;
+		this->wydatkiNaPokarm = wydatkiNaPokarm;
+		idKlasy = 3;
+	}
+
+	friend ostream& operator << (ostream& out, StudentBiologii & s) {
+		Student a = s;
+		PrzyjacielZwierzat pz = s;
+		out << a;
+		out << s;
+		return out;
+	}
+};
+
+class StudentInformatyki : public Student, public GeniuszMatematyczny {
 private:
 	bool znaCpp;;
 public:
@@ -126,10 +176,16 @@ public:
 		out << endl;
 		out << gm;
 		return out;
-	}	void modyfikujNumerIndeksu() {
+	}
+
+	void modyfikujNumerIndeksu() {
 		if (numerIndeksu[0] != 'I') numerIndeksu = 'I' + numerIndeksu;
-	}
-};class StudentPolonistyki : public Student {
+	}
+
+
+};
+
+class StudentPolonistyki : public Student {
 private:
 	int liczbaPrzeczytanychKsiazek;
 public:
@@ -158,7 +214,8 @@ public:
 		out << endl;
 		return out;
 	}
-};
+};
+
 class Uczelnia {
 protected:
 	string nazwa;
@@ -210,7 +267,11 @@ int main() {
 	/*
 	for (int i = 0; i < 5; i++) {
 		cout << *s[i];
-	}	cout << endl << endl;	for (int i = 0; i < 5; i++) {
+	}
+
+	cout << endl << endl;
+
+	for (int i = 0; i < 5; i++) {
 		switch (s[i]->getIdKlasy()) {
 		case 0:
 			cout << *s[i];
@@ -225,11 +286,23 @@ int main() {
 			cout << "Obiekt nieznanej klasy" << endl;
 			break;
 		}
-	}	for (int i = 0; i < 5; i++) {
+	}
+
+	for (int i = 0; i < 5; i++) {
 		UG.dodajStudenta(s[i]);
-	}	for (int i = 0; i < 5; i++) {
+	}
+
+	for (int i = 0; i < 5; i++) {
 		cout<<UG.
-	}*/	/*for (int i = 0; i < 5; i++) {
+	}*/
+
+	/*for (int i = 0; i < 5; i++) {
 		UG.dodajStudenta(s[i]);
-	}	UG.wypiszStudentow();*/	cout << sb6;	system("PAUSE");
+	}
+
+	UG.wypiszStudentow();*/
+
+	cout << sb6;
+
+	system("PAUSE");
 }
