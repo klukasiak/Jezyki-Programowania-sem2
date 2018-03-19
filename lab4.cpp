@@ -337,31 +337,6 @@ void wyborStudenta() {
 	cout << "Podaj wybor: " << endl;
 }
 
-void dodawanieStudenta(int n, Uczelnia & UG) {
-	StudentInformatyki si;
-	StudentPolonistyki sp;
-	StudentBiologii sb;
-	Student * s[] = { &si, &sp, &sb };
-	switch (n) {
-	case 1:
-		cin >> si;
-		*s[0] = si;
-		UG.dodajStudenta(s[0]);
-		break;
-	case 2:
-		cin >> *static_cast<StudentPolonistyki *>(s[1]);
-		UG.dodajStudenta(s[1]);
-		break;
-	case 3:
-		cin >> *static_cast<StudentBiologii *>(s[2]);
-		UG.dodajStudenta(s[2]);
-		break;
-	default:
-		cout << "Zly wybor" << endl;
-		break;
-	}
-}
-
 int main() {
 	/*Student s1("Jan", "Kowalski", 3, "123456");
 	StudentInformatyki si2("Tomasz", "Nowak", 1, "431235", 1);
