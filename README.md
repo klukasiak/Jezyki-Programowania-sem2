@@ -2,8 +2,8 @@
 
 
 ## lab02.cpp
+##Strumienie wejściowe/wyjściowe
 
-Strumienie wejściowe/wyjściowe 
 **Zad1** *Wykonac zadania z instrukcji laboratoryjnej (na stronie domowej)*
 
 **Zad2** *Utworzyć i uruchomić program, który wczytuje ciąg 20 par danych liczbowych i zapisuje ie do pliku moje_dane.txt w postaci 20 liczb wykładniczych.*
