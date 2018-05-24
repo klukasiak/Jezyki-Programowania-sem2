@@ -3,7 +3,7 @@
 
 ## lab02.cpp
 
-###Strumienie wejściowe/wyjściowe
+### Strumienie wejściowe/wyjściowe
 
 **Zad1** *Wykonac zadania z instrukcji laboratoryjnej (na stronie domowej)*
 
